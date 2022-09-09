@@ -18,6 +18,17 @@ body {
     margin: 50px;
 }
 .titleName{
-    color: azure;
+    color: beige;
     text-align: center;
+}
+.searchBtn {
+    height: 50px;
+    width: 75px;
+    border-radius: 7px;
+}
+#searchArtists {
+    height: 50px;
+    text-align: center;
+    width: 400px;
+    border-radius: 7px;
 }
