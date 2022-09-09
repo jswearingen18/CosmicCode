@@ -16,5 +16,5 @@ $(".searchBtn").on("click", (event) => {
 });
 
 var getRecArtist = (artists) => {
- // fetch function goes here
+ // fetch function can go here 
 }
