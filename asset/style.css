@@ -1,0 +1,51 @@
+/* Adding .css for first commit*/
+header {
+    height: 100px;
+    background: linear-gradient(to right,black, grey,black);
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    border: solid 75px;
+    border-top: none;
+   
+}
+center {
+    margin-top: 150px;
+}
+.desc {
+    flex: wrap;
+    font-size: 25px;
+    color: azure;
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: black;
+
+}
+.titleName{
+    color: azure;
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+}
+.searchBtn {
+    height: 50px;
+    width: 75px;
+    border-radius: 7px;
+}
+#searchArtists {
+    height: 50px;
+    text-align: center;
+    width: 400px;
+    border-radius: 7px;
+}
+.background {
+    background-image: url("images/backgroundimg.jpg");  
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    height: 650px;
+    margin: 0px;
+}
