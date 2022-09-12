@@ -8,7 +8,7 @@ var searchHistory = [];
 // Event Handler for Search Artists Button
 $(".searchBtn").on("click", (event) => {
     event.preventDefault();
-    artists = $("searchArtistsInput").val();
+    artists = $("searchArtists").val();
     // Function for returning artist recommendation
     getRecArtist(artists);
 //  getBandShows
@@ -16,5 +16,5 @@ $(".searchBtn").on("click", (event) => {
 });
 
 var getRecArtist = (artists) => {
- // fetch function goes here
+ // fetch function can go here 
 }
