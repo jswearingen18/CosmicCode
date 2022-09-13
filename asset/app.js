@@ -15,7 +15,12 @@ const input = inputVal.value;
 let city = 'nashville'
 ticketMasterURL = 'https://app.ticketmaster.com/discovery/v2/events.json?city=&classificationName=music&apikey=FskGqxyeT5Cc6gGb9olDTAvqKCLwfpT3';
 
-
+function  ticketMaster() {
+    fetch(ticketMasterURL)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+  }
+  
 // Event Handler for Search Artists Button
 $(".searchBtn").on("click", (event) => {
     event.preventDefault();
