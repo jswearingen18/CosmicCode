@@ -2,17 +2,13 @@ var artists = "";
 var apiKeyTD = "442081-DavidHer-JPC29JEG";
 var searchHistory = [];
 
-
 // Event Handler for Search Artists Button
 $(".searchBtn").on("click", (event) => {
     event.preventDefault();
-<<<<<<< HEAD:asset/app.js
     artists = $("searchArtists").val();
-=======
     // artists = $("searchArtistsInput").val();
    const  artistInput = document.getElementById('searchArtists').value
     console.log(artistInput)
->>>>>>> fefe95a (fixing merge):app.js
     // Function for returning artist recommendation
     getRecArtist(artists);
 //  getBandShows
@@ -20,18 +16,13 @@ $(".searchBtn").on("click", (event) => {
 
 // connecting button to api's
     app.getRelated()
-    ticketMaster();
+    //ticketMaster();
 });
 
 var getRecArtist = (artists) => {
-<<<<<<< HEAD:asset/app.js
  // fetch function can go here 
 }
-=======
  // fetch function goes here
-}
-
-
 // getting the tasteDive api. 
 const app = {};
 app.apiKey = '442081-DavidHer-JPC29JEG';
@@ -49,10 +40,15 @@ app.getRelated = function (search) {
         dataType: "jsonp",
     }).then(function (res) {
         console.log('dataRetrieved', res);
+        ticketMaster();
+        function  ticketMaster() {
+            console.log(res);
+          fetch(ticketMasterURL)
+          .then((response) => response.json())
+          .then((data) => console.log(data));
+        }   
     });
 };
-
-
 // getting the ticket master api 
 
 // key FskGqxyeT5Cc6gGb9olDTAvqKCLwfpT3
@@ -62,11 +58,4 @@ app.getRelated = function (search) {
 let city = 'nashville'
 ticketMasterURL = 'https://app.ticketmaster.com/discovery/v2/events.json?city=&classificationName=music&apikey=FskGqxyeT5Cc6gGb9olDTAvqKCLwfpT3';
 
-function  ticketMaster() {
-  fetch(ticketMasterURL)
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-}
 
-
->>>>>>> fefe95a (fixing merge):app.js
