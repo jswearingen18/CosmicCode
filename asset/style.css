@@ -1,22 +1,28 @@
 /* Adding .css for first commit*/
-header {
-    height: 100px;
-    background: linear-gradient(to right,black, grey,black);
-}
+
 body {
     margin: 0px;
     padding: 0px;
     border: solid 75px;
     border-top: none;
+    background: linear-gradient(to right,black, grey,black);
    
 }
+
+header {
+    height: 100px;
+    padding: 5px;
+    padding-bottom: 50px;
+    background: linear-gradient(to right,black, grey,black);
+
+}
+
 center {
     margin-top: 150px;
 }
 .desc {
     flex: wrap;
-    font-size: 25px;
-    color: azure;
+    font-size: 20px;
     text-align: center;
     font-weight: bolder;
     padding-top: 50px;
@@ -32,20 +38,41 @@ center {
     font-size: 40px;
 }
 .searchBtn {
-    height: 50px;
+    height: 33px;
     width: 75px;
+    border: .5px solid black;
     border-radius: 7px;
 }
+
+/* search button hover */
+.searchBtn:hover {
+    font-size: 95%;
+    color: white;
+    text-shadow: 1px 1px black;
+    background-color: red;
+    border: .5px solid white;
+}
+
 #searchArtists {
-    height: 50px;
+    height: 30px;
     text-align: center;
     width: 400px;
     border-radius: 7px;
+    border: .5px solid black;
 }
+
+/* search input hover */
+#searchArtists:hover {
+    background-color: lightblue;  
+    border: .5px solid white;
+}
+
 .background {
     background-image: url("images/backgroundimg.jpg");  
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
+    background-size: cover;
     height: 650px;
     margin: 0px;
+    border: 1px solid whitesmoke;
+    border-radius: 1px;
 }
