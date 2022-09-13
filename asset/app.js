@@ -55,6 +55,7 @@ var getRecArtist = (artists) => {
            dataType: "jsonp",
        }).then(function (res) {
            console.log('dataRetrieved', res);
+           console.log(res)
        });
 
    }; 
