@@ -2,17 +2,13 @@ var artists = "";
 var apiKeyTD = "442081-DavidHer-JPC29JEG";
 var searchHistory = [];
 
-
 // Event Handler for Search Artists Button
 $(".searchBtn").on("click", (event) => {
     event.preventDefault();
-<<<<<<< HEAD:asset/app.js
     artists = $("searchArtists").val();
-=======
     // artists = $("searchArtistsInput").val();
    const  artistInput = document.getElementById('searchArtists').value
     console.log(artistInput)
->>>>>>> fefe95a (fixing merge):app.js
     // Function for returning artist recommendation
     getRecArtist(artists);
 //  getBandShows
@@ -24,14 +20,9 @@ $(".searchBtn").on("click", (event) => {
 });
 
 var getRecArtist = (artists) => {
-<<<<<<< HEAD:asset/app.js
  // fetch function can go here 
 }
-=======
  // fetch function goes here
-}
-
-
 // getting the tasteDive api. 
 const app = {};
 app.apiKey = '442081-DavidHer-JPC29JEG';
@@ -67,6 +58,3 @@ function  ticketMaster() {
   .then((response) => response.json())
   .then((data) => console.log(data));
 }
-
-
->>>>>>> fefe95a (fixing merge):app.js
