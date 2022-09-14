@@ -76,3 +76,8 @@ center {
     border: 1px solid whitesmoke;
     border-radius: 1px;
 }
+.artists {
+    border: 1px solid whitesmoke;
+    margin: 3px;
+    text-align: center;
+}

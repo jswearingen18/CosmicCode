@@ -3,50 +3,24 @@ var apiKeyTD = "442081-DavidHer-JPC29JEG";
 var searchHistory = [];
 const inputVal = document.getElementById('searchArtists')
 const input = inputVal.value;
-
-
-
-// getting the ticket master api 
-
-// key FskGqxyeT5Cc6gGb9olDTAvqKCLwfpT3
-// info on api https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/
-// to get attraction id &attractionId='
-
-let city = 'nashville'
-ticketMasterURL = 'https://app.ticketmaster.com/discovery/v2/events.json?city=&classificationName=music&apikey=FskGqxyeT5Cc6gGb9olDTAvqKCLwfpT3';
-
-function  ticketMaster() {
-    fetch(ticketMasterURL)
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-  }
-  
+var performers = [];
 // Event Handler for Search Artists Button
 $(".searchBtn").on("click", (event) => {
     event.preventDefault();
     var artists = $("#searchArtists").val();
-    // artists = $("searchArtistsInput").val();
     // Function for returning artist recommendation
     getRecArtist(artists);
-//  getBandShows
-//  saveSearchedArtist
 
 // connecting button to api's
-    // app.getRelated()
-    ticketMaster();
+    getseatGeek();
 });
 
 var getRecArtist = (artists) => {
-    // fetch function can go here 
    
-    // fetch function goes here
    // getting the tasteDive api. 
    const app = {};
    app.apiKey = '442081-DavidHer-JPC29JEG';
-   // app.apiURL = 'http://tastedive.com/api/similar?info=1&q=' + 'Nirvana' + '&k=442081-DavidHer-I9V9LHL5'
    app.apiURL = 'http://tastedive.com/api/similar?info=1&q=' +  artists + '&k=442081-DavidHer-I9V9LHL5'
-   console.log(input)
-   
    app.getRelated = function (search) {
        $.ajax({
            type: 'GET',
@@ -58,11 +32,27 @@ var getRecArtist = (artists) => {
            },
            url: app.apiURL,
            dataType: "jsonp",
-       }).then(function (res) {
-           console.log('dataRetrieved', res);
-           console.log(res)
-       });
+       }).then(function (data) {;
+           console.log(data);
+           var artistList = document.querySelector(".artistList");
+           for (var i = 0; i < 5; i++) {
+            var artistName = $("<li></li>");
+               let artistArray = data.Similar.Results[i].Name;
+               console.log(artistArray);
+               $(artistList).append(artistName);
+                $(artistName).addClass("artists");
+                $(artistName).append(artistArray);
+                performers.push(data.Similar.Results[i].Name)
+        }
+    });
 
    }; 
    app.getRelated()
 }
+function  getseatGeek() {
+    console.log(performers);
+    var seatgeekurl = `https://api.seatgeek.com/2/performers?q=${performers}&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1`;
+    fetch(seatgeekurl)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+  }
