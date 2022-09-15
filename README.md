@@ -3,7 +3,7 @@
 ## Find local music shows similar to favorite artists
 
 ## Description
-Allows user to input an artist they enjoy. Then returns similar artists and what local shows they have. So they can still experience the music shows they enjoy without having to wait for a local tour. 
+Sing-A-Like allows users to input an artist they like, and then returns a list of similar artists playing in their area, along with a link to purchase their show tickets from Seatgeek. 
 
 ## Github URL link
 
@@ -15,7 +15,7 @@ Allows user to input an artist they enjoy. Then returns similar artists and what
 
 
  ## Usage
-Find local shows within a mile radius that are similiar to your favorite artists
+This app was developed so concert-seekers can still experience the live music style they enjoy without having to wait for a local tour. Users can find local shows within a mile radius that are similiar to their favorite artists.
 
  ## Roadmap
 Create variables for what data we need and what input we will take. 
