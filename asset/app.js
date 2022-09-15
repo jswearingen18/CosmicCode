@@ -4,11 +4,17 @@ var searchHistory = [];
 const inputVal = document.getElementById('searchArtists')
 const input = inputVal.value;
 var performers = [];
+// #distance-data div for reset later 
+// var DistanceDataOriginal = $(#distance-data").html()
 // Event Handler for Search Artists Button
 $(".searchBtn").on("click", (event) => {
     event.preventDefault();
+// Search values retrieved (Would need to make a form?)
     var artists = $("#searchArtists").val();
-    // Function for returning artist recommendation
+//  var zipCode = $("#zip-code").val().trim();
+//  var distanceRadius = $("distance-data").val().trim();
+
+// Function for returning artist recommendation
     getRecArtist(artists);
 
 // connecting button to api's
@@ -43,6 +49,9 @@ var getRecArtist = (artists) => {
                 $(artistName).addClass("artists");
                 $(artistName).append(artistArray);
                 // performers.push(data.Similar.Results[i].Name)
+                // var position = "venues?postal_code=" + zipCode; (maybe /venues?)
+                // var distance = "&range=" + distanceRadius;
+                // var seatgeekurl = "https://api.seatgeek.com/2/performers?q=" +artistArray+ "venues?postal_code=" +zipCode+ "&range=" +distanceRadius+ "&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1";
                 var seatgeekurl = "https://api.seatgeek.com/2/performers?q=" +artistArray+ "&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1";
         console.log(seatgeekurl)
         fetch(seatgeekurl)
