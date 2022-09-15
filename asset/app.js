@@ -42,17 +42,15 @@ var getRecArtist = (artists) => {
                $(artistList).append(artistName);
                 $(artistName).addClass("artists");
                 $(artistName).append(artistArray);
-                performers.push(data.Similar.Results[i].Name)
+                // performers.push(data.Similar.Results[i].Name)
+                var seatgeekurl = "https://api.seatgeek.com/2/performers?q=" +artistArray+ "&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1";
+        console.log(seatgeekurl)
+        fetch(seatgeekurl)
+        .then((response) => response.json())
+        .then((data) => console.log(data));
         }
     });
 
    }; 
    app.getRelated()
 }
-function  getseatGeek() {
-    console.log(performers);
-    var seatgeekurl = `https://api.seatgeek.com/2/performers?q=${performers}&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1`;
-    fetch(seatgeekurl)
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-  }
