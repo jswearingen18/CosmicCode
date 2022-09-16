@@ -20,6 +20,9 @@ header {
 center {
     margin-top: 150px;
 }
+span {
+    color: rgb(134, 0, 0);
+}
 .desc {
     flex: wrap;
     font-size: 20px;
@@ -78,6 +81,9 @@ center {
 }
 .artists {
     border: 1px solid whitesmoke;
-    margin: 3px;
+    background-color: rgb(45, 43, 43);
     text-align: center;
+    color: greenyellow;
+    width: 200px;
+    margin-left: 650px;
 }

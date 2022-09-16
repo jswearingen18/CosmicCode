@@ -49,7 +49,7 @@ var getRecArtist = (artists) => {
         .then(function (data) {
            console.log(data);
            var artistList = document.querySelector(".artistList");
-
+            
                 for (var i = 0; i < 5; i++) {
                     var artistName = $("<li></li>");
                     let artistArray = data.Similar.Results[i].Name;
@@ -61,7 +61,12 @@ var getRecArtist = (artists) => {
 
                         performers.push(data.Similar.Results[i].Name)
                         //  console.log(performers);
-
+                        var seatgeekurl = "https://api.seatgeek.com/2/performers?q=" +artistArray+ "&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1";
+                        console.log(seatgeekurl)
+                        fetch(seatgeekurl)
+                        .then((response) => response.json())
+                        .then((data) => console.log(data));
+                console.log(data.has_upcoming_events)
                         // var position = "venues?postal_code=" + zipCode; (maybe /venues?)
                         // var distance = "&range=" + distanceRadius;
                         // var seatGeekUrl = "https://api.seatgeek.com/2/performers?q=" +artistArray+ "venues?postal_code=" +zipCode+ "&range=" +distanceRadius+ "&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1";
@@ -72,36 +77,3 @@ var getRecArtist = (artists) => {
  } 
 
 
- // Getting the Seat Geek API data
-function  getSeatGeek() {
-
-    var seatGeekUrl = `https://api.seatgeek.com/2/performers?q=${performers}&type=band&per_page=2000&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1`;
-
-    fetch(seatGeekUrl)
-       .then((response) => response.json())
-       .then(function (data) {
-            console.log(data)
-        
-
-                // gets performer names from seat geek 
-                for( let i = 0; i < 5; i++) {
-                    let sgData = data.performers[i].name;
-                    // console.log(sgData)
-                    shows.push(data.performers[i].name);
-        }
-    })
-    compare()
-  }
-
-
-// Function to compare Taste Dive and Seat Geek results 
-function compare () {
-    console.log(shows)
-    console.log(performers)
-}
-
-
-// to-do: 
-// compare shows and performers together and get a match 
-// display the matched shows and performers 
-// filter out matched shows by zip code, or location
