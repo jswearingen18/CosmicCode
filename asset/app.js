@@ -60,18 +60,22 @@ var getRecArtist = (artists) => {
                         performers.push(data.Similar.Results[i].Name)
                         //  console.log(performers);
                         var seatgeekurl = "https://api.seatgeek.com/2/performers?q=" +artistArray+ "&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1";
-                        console.log(seatgeekurl)
+                        // console.log(seatgeekurl)
                         fetch(seatgeekurl)
                         .then((response) => response.json())
                         .then(function (data) {
-                            if (data.performers[0].has_upcoming_events) {
-                                $(artistList).append(artistName);
-                                $(artistName).addClass("artists");
+                        // console.log(data.performers[0].url)
+                            var artistName = $("<a href = " + data.performers[0].url + " target=_blank></a>");
+                            console.log(artistName)
+                            var artistBox = $('<p></p>'); 
+                            if (data.performers[0].has_upcoming_events) 
+                                $(artistList).append(artistBox);
+                                $(artistBox).addClass("artists");
+                                $(artistBox).append(artistName)
                                 $(artistName).append(artistArray);
-                            }});
+                                $(artistName).attr(data.performers[0].url )
+                            });
                         
-
-                console.log(data.has_upcoming_events)
                         // var position = "venues?postal_code=" + zipCode; (maybe /venues?)
                         // var distance = "&range=" + distanceRadius;
                         // var seatGeekUrl = "https://api.seatgeek.com/2/performers?q=" +artistArray+ "venues?postal_code=" +zipCode+ "&range=" +distanceRadius+ "&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1";
