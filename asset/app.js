@@ -1,8 +1,8 @@
 const inputVal = document.getElementById('searchArtists')
 const input = inputVal.value;
-var searchHistory = [];
-var performers = [];
-var shows = [];
+let searchHistory = [];
+let performers = [];
+let shows = [];
 
 // #distance-data div for reset later 
 // var DistanceDataOriginal = $(#distance-data").html()
@@ -21,7 +21,7 @@ $(".searchBtn").on("click", (event) => {
     getRecArtist(artists);
 });
 
-var getRecArtist = (artists) => {
+let getRecArtist = (artists) => {
    
    // Getting the Taste Dive API data
    const app = {};
@@ -34,7 +34,7 @@ var getRecArtist = (artists) => {
            dataType: "jsonp",
        })
         .then(function (data) {
-           var artistList = document.querySelector(".artistList");
+           let artistList = document.querySelector(".artistList");
             
                 for (var i = 0; i < 30; i++) {
                 
@@ -48,16 +48,19 @@ var getRecArtist = (artists) => {
                         .then((response) => response.json())
                         .then(function (data) {
                        
-                            var artistName = $("<a href = " + data.performers[0].url + " target=_blank></a>");
+                            let artistName = $("<a href = " + data.performers[0].url + " target=_blank></a>");
                             console.log(artistName)
-                            var artistBox = $('<p></p>'); 
+                            let artistBox = $('<div></div>'); 
+                            let saveIcon = $("<span>+</span>");
                             if (data.performers[0].has_upcoming_events) 
                                 $(artistList).append(artistBox);
                                 $(artistBox).addClass("artists");
                                 $(artistBox).append(artistName)
                                 $(artistName).append(artistArray);
-                                $(artistName).attr(data.performers[0].url )
-                            });
+                                $(artistName).attr(data.performers[0].url)
+                                $(artistName).append(saveIcon);
+                                $(saveIcon).addClass("icon");                           
+                             });
                         
                         // var position = "venues?postal_code=" + zipCode; (maybe /venues?)
                         // var distance = "&range=" + distanceRadius;
@@ -67,5 +70,6 @@ var getRecArtist = (artists) => {
    }
    app.getRelated()
  } 
-
+// Event handler for saving artists to local storage
+//$(".saveIcon").on("click", function() })
 
