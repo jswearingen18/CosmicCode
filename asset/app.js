@@ -23,7 +23,7 @@ $(".searchBtn").on("click", (event) => {
     getRecArtist(artists);
 
 // Function for returning upcoming shows
-    getSeatGeek();
+ //   getSeatGeek();
 });
 
 
@@ -50,14 +50,12 @@ var getRecArtist = (artists) => {
            console.log(data);
            var artistList = document.querySelector(".artistList");
             
-                for (var i = 0; i < 5; i++) {
+                for (var i = 0; i < 20; i++) {
                     var artistName = $("<li></li>");
                     let artistArray = data.Similar.Results[i].Name;
-                    // console.log(artistArray);
+                    
 
-                        $(artistList).append(artistName);
-                        $(artistName).addClass("artists");
-                        $(artistName).append(artistArray);
+                        
 
                         performers.push(data.Similar.Results[i].Name)
                         //  console.log(performers);
@@ -65,7 +63,14 @@ var getRecArtist = (artists) => {
                         console.log(seatgeekurl)
                         fetch(seatgeekurl)
                         .then((response) => response.json())
-                        .then((data) => console.log(data));
+                        .then(function (data) {
+                            if (data.performers[0].has_upcoming_events) {
+                                $(artistList).append(artistName);
+                                $(artistName).addClass("artists");
+                                $(artistName).append(artistArray);
+                            }});
+                        
+
                 console.log(data.has_upcoming_events)
                         // var position = "venues?postal_code=" + zipCode; (maybe /venues?)
                         // var distance = "&range=" + distanceRadius;
