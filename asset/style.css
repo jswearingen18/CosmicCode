@@ -88,4 +88,6 @@ span {
     display: block;
     margin: auto;
 }
-
+.icon {
+    color: white;
+}
