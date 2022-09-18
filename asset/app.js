@@ -43,7 +43,10 @@ let getRecArtist = (artists) => {
                         
                         let seatGeekKey = "MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1"
                         let seatGeekUrl = `https://api.seatgeek.com/2/performers?q=${artistArray}&client_id=${seatGeekKey}`;
-                       
+                        // var position = "venues?postal_code=" + zipCode; 
+                        // var distance = "&range=" + distanceRadius;
+                        
+
                         fetch(seatGeekUrl)
                         .then((response) => response.json())
                         .then(function (data) {
@@ -59,8 +62,8 @@ let getRecArtist = (artists) => {
                                 $(artistBox).append(saveIcon);
                                 $(saveIcon).addClass("icon");                           
                              }});
-
-                        fetch(seatGeekUrl)
+                            
+                    /*    fetch(seatGeekUrl)
                         .then((response) => response.json())
                         .then(function (data) {
                             let artistName = $("<a href = " + data.performers[0].url + " target=_blank></a>");
@@ -73,11 +76,27 @@ let getRecArtist = (artists) => {
                                 $(artistName).append(artistArray);
                                 $(artistName).attr(data.performers[0].url)
                                 $(artistBox).append(saveIcon);
-                                $(saveIcon).addClass("icon");   
+                                $(saveIcon).addClass("icon");  
                                 
 
-                            }});
-                        
+                            }}); */
+        
+                          /*  .then(function (data) {
+                                let artistName = $("<a href = " + data.performers[0].url + " target=_blank></a>");
+                                let artistBox = $('<div></div>'); 
+                                let saveIcon = $("<button>+</button>");
+                                if (data.performers[0].has_upcoming_events) { 
+                                    $(artistList).append(artistBox);
+                                    $(artistBox).addClass("artists");
+                                    $(artistBox).append(artistName)
+                                    $(artistName).append(artistArray);
+                                    $(artistName).attr(data.performers[0].url)
+                                    $(artistBox).append(saveIcon);
+                                    $(saveIcon).addClass("icon");   
+                                    
+    
+                                }}); */
+                                
                         // var position = "venues?postal_code=" + zipCode; (maybe /venues?)
                         // var distance = "&range=" + distanceRadius;
                         // var seatGeekUrl = "https://api.seatgeek.com/2/performers?q=" +artistArray+ "venues?postal_code=" +zipCode+ "&range=" +distanceRadius+ "&client_id=MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1";
@@ -102,9 +121,16 @@ let getRecArtist = (artists) => {
     // const userHistory = localStorage.getItem('artist')
     // $(userHistory).append(searchEl)
     
-    
+})
 
-
+let getUpcomingShow = function (data) {
+    let seatGeekKey = "MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1"
+    var seatGeekUpcomingUrl = `https://api.seatgeek.com/2/events&client_id=${seatGeekKey}`;
+    fetch(seatGeekUpcomingUrl)
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+}
+    getUpcomingShow()
 
 
     // const ulList = document.getElementById('city-ul-list')
@@ -118,7 +144,7 @@ let getRecArtist = (artists) => {
 
 
 
-})
+
 // Event handler for saving artists to local storage
 //$(".saveIcon").on("click", function() })
 
