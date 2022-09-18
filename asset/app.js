@@ -47,20 +47,34 @@ let getRecArtist = (artists) => {
                         fetch(seatGeekUrl)
                         .then((response) => response.json())
                         .then(function (data) {
-                       
                             let artistName = $("<a href = " + data.performers[0].url + " target=_blank></a>");
-                            console.log(artistName)
                             let artistBox = $('<div></div>'); 
-                            let saveIcon = $("<span>+</span>");
-                            if (data.performers[0].has_upcoming_events) 
+                            let saveIcon = $("<button>+</button>");
+                            if (data.performers[0].has_upcoming_events) { 
                                 $(artistList).append(artistBox);
                                 $(artistBox).addClass("artists");
                                 $(artistBox).append(artistName)
                                 $(artistName).append(artistArray);
                                 $(artistName).attr(data.performers[0].url)
-                                $(artistName).append(saveIcon);
+                                $(artistBox).append(saveIcon);
                                 $(saveIcon).addClass("icon");                           
-                             });
+                             }});
+
+                        fetch(seatGeekUrl)
+                        .then((response) => response.json())
+                        .then(function (data) {
+                            let artistName = $("<a href = " + data.performers[0].url + " target=_blank></a>");
+                            let artistBox = $('<div></div>'); 
+                            let saveIcon = $("<button>+</button>");
+                            if (data.performers[0].has_upcoming_events) { 
+                                $(artistList).append(artistBox);
+                                $(artistBox).addClass("artists");
+                                $(artistBox).append(artistName)
+                                $(artistName).append(artistArray);
+                                $(artistName).attr(data.performers[0].url)
+                                $(artistBox).append(saveIcon);
+                                $(saveIcon).addClass("icon");                           
+                            }});
                         
                         // var position = "venues?postal_code=" + zipCode; (maybe /venues?)
                         // var distance = "&range=" + distanceRadius;

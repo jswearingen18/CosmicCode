@@ -59,7 +59,7 @@ span {
 #searchArtists {
     height: 30px;
     text-align: center;
-    width: 400px;
+    width: 200px;
     border-radius: 7px;
     border: .5px solid black;
 }
@@ -74,10 +74,17 @@ span {
     background-image: url("images/backgroundimg.jpg");  
     background-repeat: no-repeat;
     background-size: cover;
-    height: 650px;
     margin: 0px;
-    border: 1px solid whitesmoke;
-    border-radius: 1px;
+    display: block;
+    border: 2px solid greenyellow;
+    overflow-y: scroll;
+    width: 750px;
+    height: 350px;
+    scrollbar-color: greenyellow;
+    border-radius: 10px;
+}
+.artists {
+    display: inline-flex;
 }
 .artists a {
     border: 1px solid whitesmoke;
@@ -87,7 +94,28 @@ span {
     width: 200px;
     display: block;
     margin: auto;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 6px;
+    margin: 2px 0px 2px 2px;
 }
 .icon {
     color: white;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    color: rgb(45, 43, 43);
+    background-color: greenyellow;
+    margin-top: 3px;
+}
+
+::-webkit-scrollbar {
+    width: 1vw;
+}
+::-webkit-scrollbar-thumb {
+    background-color: greenyellow;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgb(45, 43, 43);
+    border-radius: 10px;
 }
