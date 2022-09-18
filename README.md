@@ -3,12 +3,12 @@
 ## Find local music shows similar to favorite artists
 
 ## Description
-Sing-A-Like allows users to input an artist they like, and then returns a list of similar artists playing in their area, along with a link to purchase their show tickets from Seatgeek. This app was developed so concert-seekers can still experience the live music style they enjoy without having to wait for a local tour. Users can find local shows within a mile radius that are similiar to their favorite artists.
+Side Beat allows users to input an artist they like, and then returns a list of similar artists playing in their area, along with a link to purchase their show tickets from Seatgeek. This app was developed so concert-seekers can still experience the live music style they enjoy without having to wait for a local tour. Users can find local shows within a mile radius that are similiar to their favorite artists.
 
 ## Github URL link
 
  ## Github Reposisitory link
-
+https://github.com/jswearingen18/Side-Beat.git
  ## Badges
 
  ## Visuals
