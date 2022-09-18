@@ -119,3 +119,11 @@ span {
     background-color: rgb(45, 43, 43);
     border-radius: 10px;
 }
+.searchHistory {
+    background-color: rgb(45, 43, 43);
+    color: greenyellow;
+    font-size: 20px;
+    border: solid 2px greenyellow;
+    width: 100px;
+    margin: 50px;
+}
