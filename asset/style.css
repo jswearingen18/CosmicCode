@@ -1,20 +1,16 @@
 /* Adding .css for first commit*/
-
+header {
+    height: 100px;
+    padding: 5px;
+    padding-bottom: 50px;
+    background: linear-gradient(to right,black, grey, black);
+}
 body {
     margin: 0px;
     padding: 0px;
     border: solid 75px;
     border-top: none;
     background: linear-gradient(to right,black, grey,black);
-   
-}
-
-header {
-    height: 100px;
-    padding: 5px;
-    padding-bottom: 50px;
-    background: linear-gradient(to right,black, grey,black);
-
 }
 
 center {
@@ -122,8 +118,24 @@ span {
 .searchHistory {
     background-color: rgb(45, 43, 43);
     color: greenyellow;
-    font-size: 20px;
+    font-size: 50px;
     border: solid 2px greenyellow;
-    width: 100px;
-    margin: 50px;
+    height: 350px;
+    border-radius: 10px;
+    margin-left: 30px;
+    width: 250px;
+}
+.upcomingEv {
+    background-color: rgb(45, 43, 43);
+    color: greenyellow;
+    border: 2px solid greenyellow;
+    height: 350px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    margin-right: 30px;
+    width: 250px;
+}
+.events {
+    height: 300px;
+    display: flex;
 }
