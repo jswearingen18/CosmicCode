@@ -73,7 +73,9 @@ let getRecArtist = (artists) => {
                                 $(artistName).append(artistArray);
                                 $(artistName).attr(data.performers[0].url)
                                 $(artistBox).append(saveIcon);
-                                $(saveIcon).addClass("icon");                           
+                                $(saveIcon).addClass("icon");   
+                                
+
                             }});
                         
                         // var position = "venues?postal_code=" + zipCode; (maybe /venues?)
@@ -84,6 +86,39 @@ let getRecArtist = (artists) => {
    }
    app.getRelated()
  } 
+
+ $('.searchBtn').on('click', (event) => {
+    const history = document.getElementsByClassName('searchHistory')
+    const artists = $("#searchArtists").val();
+    localStorage.setItem('artist', artists)
+
+    let search = localStorage.getItem('artist')
+
+   console.log(search)
+   $(history).append(search);
+
+    // let searchEl = $('<div></div>'); 
+    // $(searchEl).addClass("searchHistory");   
+    // const userHistory = localStorage.getItem('artist')
+    // $(userHistory).append(searchEl)
+    
+    
+
+
+
+
+    // const ulList = document.getElementById('city-ul-list')
+    // const btn = document.createElement('button');
+    // btn.setAttribute('id', 'history-button')
+    // btn.textContent = userInput.toUpperCase();
+    // ulList.appendChild(btn);
+    
+
+
+
+
+
+})
 // Event handler for saving artists to local storage
 //$(".saveIcon").on("click", function() })
 
