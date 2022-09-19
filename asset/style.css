@@ -211,6 +211,10 @@ justify-content: center;
 
     }
 
+    .descTitle {
+        margin-top: 300%;
+    }
+
     .searchHistory {
         width: 100%;
         margin: 0%;
@@ -219,3 +223,16 @@ justify-content: center;
         margin-top: 10px;
     }
 }
+@media only screen and (max-width: 460px) {
+
+        .descTitle {
+            margin-top: 500%;
+        }
+    }
+
+    @media only screen and (max-width: 350px) {
+
+        .descTitle {
+            margin-top: 700%;
+        }
+    }
