@@ -90,8 +90,16 @@ function findEvents (data) {
     .then((response) => response.json())
     .then(function (data) {
         for (var i = 0; i < 500; i++) {
+            let eventList = document.querySelector(".upcomingEv")
+            //let eventEl = $("<a href = " +  + " target=_blank></a>");
+            let artistBox = $('<div></div>'); 
         if (data.venues[i].has_upcoming_events) {
-            console.log(data.venues[i]);
+        $(eventList).append(artistBox);
+        $(artistBox).addClass("upEvents");
+        $(artistBox).append(eventEl)
+        $(eventEl).append(artistArray);
+        $(eventEl).attr(data.venues[i].name)     
+            console.log(data.venues[i].name);
         } 
     }
     })   
