@@ -28,7 +28,7 @@ let getRecArtist = (artists) => {
    // Getting the Taste Dive API data
    const app = {};
    app.apiKey = '442081-DavidHer-I9V9LHL5';
-   app.apiURL = `http://tastedive.com/api/similar?info=1&q=${artists}&k=${app.apiKey}`
+   app.apiURL = `https://tastedive.com/api/similar?info=1&q=${artists}&k=${app.apiKey}`
    app.getRelated = function (search) {
        $.ajax({
            type: 'GET',
