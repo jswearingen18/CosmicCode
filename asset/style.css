@@ -1,4 +1,4 @@
-/* Adding .css for first commit*/
+
 header {
     height: 100px;
     padding: 5px;
@@ -65,7 +65,19 @@ span {
     background-color: lightblue;  
     border: .5px solid white;
 }
+#searchPostal {
+    height: 30px;
+    text-align: center;
+    width: 200px;
+    border-radius: 7px;
+    border: .5px solid black;
+}
 
+/* search input hover */
+#searchPostal:hover {
+    background-color: lightblue;  
+    border: .5px solid white;
+}
 .background {
     background-image: url("images/backgroundimg.jpg");  
     background-repeat: no-repeat;
