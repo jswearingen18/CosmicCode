@@ -8,7 +8,7 @@ With the use of 3rd Party APIs, Side Beat allows users to input an artist they l
 Similar artist data is fetched using 3rd Party API, Taste Dive and links to those artists' upcoming shows are then generated from the SeatGeek API.
 
 ## Github URL link
-
+ https://jswearingen18.github.io/Side-Beat/
  ## Github Repository link
 https://github.com/jswearingen18/Side-Beat.git
  ## Badges

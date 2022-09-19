@@ -1,5 +1,4 @@
 let performers = [];
-
 // Event handler for search artists button
 $(".searchBtn").on("click", (event) => {
     event.preventDefault();
@@ -56,7 +55,6 @@ let getRecArtist = (artists) => {
  } 
 
  $('.searchBtn').on('click', (event) => {
-    const history = document.getElementsByClassName('searchHistory')
     const artists = $("#searchArtists").val();
     localStorage.setItem('artist', artists)
 
@@ -66,7 +64,6 @@ let getRecArtist = (artists) => {
    newLi.innerText = search
    historyList.appendChild(newLi)
    localStorage.setItem('artist', search)
-//    $(history).append(search);
 })
 
 
@@ -90,9 +87,7 @@ function findEvents (data) {
     })   
 }
 $(".postalBtn").on("click", (event) => {
-    event.preventDefault();
-    
-// Function for returning artist recommendation
+    event.preventDefault();    
     findEvents()
 });
 
