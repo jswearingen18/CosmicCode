@@ -14,6 +14,10 @@ https://github.com/jswearingen18/Side-Beat.git
  ## Badges
 
  ## Visuals
+screenshots: 
+<img width="1512" alt="Screen Shot 2022-09-19 at 5 37 20 PM" src="https://user-images.githubusercontent.com/106282330/191131923-e69fbd57-2915-4b86-bce0-b3ee99c3ed1b.png">
+
+<img width="1512" alt="Screen Shot 2022-09-19 at 5 41 27 PM" src="https://user-images.githubusercontent.com/106282330/191132024-bf6d986a-ce21-4d51-9467-1aee8e9fbf93.png">
 
 
  ## Usage
@@ -39,4 +43,5 @@ Thank you to Vanderbilt Univeristy for starter code: built by Jeremiah Swearinge
 
 ## License
 Licensed through Trilogy Eductaion and Vanderbilt Univeristy 
+
 
