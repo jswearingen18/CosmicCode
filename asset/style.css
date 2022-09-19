@@ -151,6 +151,12 @@ span {
     text-decoration: underline;
     text-align: center ;
 }
+.zipcenter {
+    margin-top: 2px;
+}
+#searchPostal {
+    text-align: center;
+}
 @media only screen and (max-width: 600px) {
     .events {
         display: block;
