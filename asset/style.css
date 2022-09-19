@@ -141,6 +141,10 @@ span {
     display: flex;
 
 }
+.searchHistory ul {
+    font-size: 30px;
+    text-align: start;
+}
 
 #history {
     font-size: 20px;

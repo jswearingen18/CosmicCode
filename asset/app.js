@@ -71,9 +71,18 @@ let getRecArtist = (artists) => {
     const history = document.getElementsByClassName('searchHistory')
     const artists = $("#searchArtists").val();
     localStorage.setItem('artist', artists)
-    let search = localStorage.getItem('artist')
-   $(history).append(search);
+
+
+   const historyList = document.querySelector('.searchHistory ul')
+   const search = $("#searchArtists").val().toUpperCase();
+   let newLi = document.createElement('li')  // Creates <li></li>
+   newLi.innerText = search
+   historyList.appendChild(newLi)
+   localStorage.setItem('artist', search)
+//    $(history).append(search);
 })
+
+
 function findEvents (data) {
     let seatGeekKey = "MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1";
     let eventsUrl = `https://api.seatgeek.com/2/venues?per_page=500&country=US&client_id=${seatGeekKey}`;
