@@ -1,13 +1,15 @@
-# Sing-A-Like
+# Side-Beat
 
-## Find local music shows similar to favorite artists
+## Find local music shows similar to your favorite artists
 
 ## Description
-Side Beat allows users to input an artist they like, and then returns a list of similar artists playing in their area, along with a link to purchase their show tickets from Seatgeek. This app was developed so concert-seekers can still experience the live music style they enjoy without having to wait for a local tour. Users can find local shows within a mile radius that are similiar to their favorite artists.
+With the use of 3rd Party APIs, Side Beat allows users to input an artist they like, returns a list of similar artists, and a link to purchase their show tickets from SeatGeek. This app was developed so concert-seekers can still experience the live music style they enjoy when their favorite artist isn't available. When users enter a zip code they can also find an additional list of upcoming shows in their area.
+
+Similar artist data is fetched using 3rd Party API, Taste Dive and links to those artists' upcoming shows are then generated from the SeatGeek API.
 
 ## Github URL link
 
- ## Github Reposisitory link
+ ## Github Repository link
 https://github.com/jswearingen18/Side-Beat.git
  ## Badges
 
@@ -15,7 +17,7 @@ https://github.com/jswearingen18/Side-Beat.git
 
 
  ## Usage
-
+Users enter an artist name or band name in the Search bar and click "Search". A list of similar artists will display underneath. When a user clicks on any of the similar artists, that artist's SeatGeek page will open showing if there are upcoming concerts in the user's area, along with all upcoming shows and the ability to purchase tickets. Once they have selected an artist's name, it will be saved to local storage and displayed on the page. As an additional feature, a user can enter any zip code to see if there are upcoming shows in that area.
 
  ## Roadmap
 Create variables for what data we need and what input we will take. 
