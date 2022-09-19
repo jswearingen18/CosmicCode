@@ -1,11 +1,4 @@
-const inputVal = document.getElementById('searchArtists')
-const input = inputVal.value;
-let searchHistory = [];
 let performers = [];
-let shows = [];
-
-// #distance-data div for reset later 
-// var DistanceDataOriginal = $(#distance-data").html()
 
 // Event handler for search artists button
 $(".searchBtn").on("click", (event) => {
@@ -14,15 +7,10 @@ $(".searchBtn").on("click", (event) => {
 // Search values retrieved 
     const artists = $("#searchArtists").val();
     
-    //var zipCode = $("#zip-code").val().trim();
-    //var distanceRadius = $("distance-data").val().trim();
-
 // Function for returning artist recommendation
     getRecArtist(artists);
-    findEvents ();
 
 });
-
 let getRecArtist = (artists) => {
    
    // Getting the Taste Dive API data
@@ -72,8 +60,7 @@ let getRecArtist = (artists) => {
     const artists = $("#searchArtists").val();
     localStorage.setItem('artist', artists)
 
-
-   const historyList = document.querySelector('.searchHistory ul')
+    const historyList = document.querySelector('.searchHistory ul')
    const search = $("#searchArtists").val().toUpperCase();
    let newLi = document.createElement('li')  // Creates <li></li>
    newLi.innerText = search
@@ -85,23 +72,27 @@ let getRecArtist = (artists) => {
 
 function findEvents (data) {
     let seatGeekKey = "MjkwNjEzNzF8MTY2MzAxMTM4OC40OTQ4NTc1";
-    let eventsUrl = `https://api.seatgeek.com/2/venues?per_page=500&country=US&client_id=${seatGeekKey}`;
+    let eventsUrl = `https://api.seatgeek.com/2/venues?per_page=5000&country=US&client_id=${seatGeekKey}`;
     fetch(eventsUrl)
     .then((response) => response.json())
     .then(function (data) {
-        for (var i = 0; i < 500; i++) {
+        for (var i = 0; i < 5000; i++) {
+            const zipCode = $("#searchPostal").val();
             let eventList = document.querySelector(".upcomingEv")
-            //let eventEl = $("<a href = " +  + " target=_blank></a>");
-            let artistBox = $('<div></div>'); 
-        if (data.venues[i].has_upcoming_events) {
-        $(eventList).append(artistBox);
-        $(artistBox).addClass("upEvents");
-        $(artistBox).append(eventEl)
-        $(eventEl).append(artistArray);
-        $(eventEl).attr(data.venues[i].name)     
-            console.log(data.venues[i].name);
+            let eventEl = $("<p>" + data.venues[i].name + "</p>");
+            let eventBox = $('<div></div>'); 
+        if (data.venues[i].has_upcoming_events && data.venues[i].postal_code === zipCode) {
+        $(eventList).append(eventBox);
+        $(eventBox).addClass("upEvents");
+        $(eventBox).append(eventEl)
         } 
     }
     })   
 }
+$(".postalBtn").on("click", (event) => {
+    event.preventDefault();
+    
+// Function for returning artist recommendation
+    findEvents()
+});
 
